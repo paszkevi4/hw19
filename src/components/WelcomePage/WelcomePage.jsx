@@ -9,7 +9,8 @@ const WelcomePage = () => {
       </h1>
       <form className="welcome_page__form">
         <StyledButton
-          onClick={() => {
+          onClick={(e) => {
+            e.preventDefault();
             localStorage.removeItem('token');
             window.location.reload();
           }}>

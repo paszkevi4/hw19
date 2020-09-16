@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { HashRouter, Route, Redirect, Switch } from 'react-router-dom';
 // components
 import Login from './components/Login';
