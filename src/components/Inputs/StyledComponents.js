@@ -10,7 +10,9 @@ export const _styledInput = styled.input`
   outline: none;
   border-radius: 3px;
   border: 1px solid grey;
-  border: ${(props) => (props.validated ? '1px solid red' : '')};
+  border: ${(props) => props.touched && props.validated && '1px solid green'};
+  border: ${(props) => props.touched && !props.validated && '1px solid red'};
+  border: ${(props) => !props.touched && !props.validated && '1px solid grey'};
   background: transparent;
 `;
 

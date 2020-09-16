@@ -1,23 +1,27 @@
 import React, { useState } from 'react';
-import { _styledInput } from './StyledInput';
+import { _styledInput } from './StyledComponents';
 
-const CustomInput = ({ label, validate }) => {
-  const [validated, setValidated] = useState(true);
+const CustomInput = ({ label, validate, value, setValue }) => {
+  const [validated, setValidated] = useState(false);
   const [touched, setTouched] = useState(false);
 
   const innerValidator = (e) => {
     if (validate(e)) {
-      setValidated(false);
-    } else {
       setValidated(true);
+    } else {
+      setValidated(false);
     }
   };
+
   return (
     <_styledInput
+      value={value}
       placeholder={label}
       id={label}
-      validated={touched && validated}
+      touched={touched}
+      validated={validated}
       onChange={(e) => {
+        setValue(e.target.value);
         innerValidator(e.target.value);
       }}
       onBlur={() => {
