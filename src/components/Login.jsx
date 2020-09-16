@@ -11,7 +11,8 @@ const Login = () => {
   const [password, setPassword] = useState(localStorage.getItem('myPassword'));
   const [rememberMe, setRememberMe] = useState(true);
 
-  const tokenCreator = () => {
+  const tokenCreator = (e) => {
+    e.preventDefault();
     if (email === localStorage.getItem('email') && password === localStorage.getItem('password')) {
       if (rememberMe) {
         localStorage.setItem('myEmail', email);
