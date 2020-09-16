@@ -3,12 +3,13 @@ import { HashRouter, Route, Redirect, Switch } from 'react-router-dom';
 // components
 import Login from './components/Login';
 import Signup from './components/Signup';
+import WelcomePage from './components/WelcomePage/WelcomePage';
 
 // styles
 import './App.css';
 
 const App = () => {
-  const [isAuth, setIsAuth] = useState(false);
+  let isAuth = localStorage.getItem('token');
   return (
     <HashRouter>
       <div className="App">
@@ -20,7 +21,15 @@ const App = () => {
             <Route exact path="/signup">
               <Signup />
             </Route>
-            <Route component={Login} />
+            <Redirect to="/login" />
+          </Switch>
+        )}
+        {isAuth && (
+          <Switch>
+            <Route path="/main">
+              <WelcomePage />
+            </Route>
+            <Redirect to="/main" />
           </Switch>
         )}
       </div>

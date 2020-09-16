@@ -1,3 +1,11 @@
+* {
+  font-family: 'Roboto', sans-serif;
+}
+
+body {
+  margin: 0;
+}
+
 .App {
   min-height: 100vh;
   text-align: center;
@@ -21,6 +29,12 @@
   width: 48%;
 }
 
+.checkbox input,
+label {
+  margin-top: 20px;
+  cursor: pointer;
+}
+
 .logo div {
   height: 50px;
   width: 50px;
@@ -35,15 +49,26 @@
 }
 
 .buttons {
-  margin: 0 35px;
+  margin: 0 25px;
+  font-size: 14px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
 
+.welcome_page {
+  color: #fff;
+}
+
+.welcome_page__form {
+  width: 300px;
+  margin: 0 auto;
+}
+
 a {
   color: lightblue;
   cursor: pointer;
+  text-decoration: none;
 }
 
 h5 {
