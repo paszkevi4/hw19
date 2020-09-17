@@ -52,9 +52,7 @@ const Login = () => {
         <input type="checkbox" id="remember" checked={rememberMe}></input>
         <label for="remember">Remember me</label>
       </div>
-      <form>
-        <StyledButton onClick={tokenCreator}>Login</StyledButton>
-      </form>
+      <StyledButton onClick={tokenCreator}>Login</StyledButton>
       <div className="buttons">
         <a>Forgot password</a>
         <NavLink to="/signup">Sign up</NavLink>
